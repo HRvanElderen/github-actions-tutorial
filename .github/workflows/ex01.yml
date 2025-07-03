@@ -14,9 +14,9 @@ jobs:
     - name: fetch author data
       run: curl -s "openlibrary.org/search/authors.json?q=$AUTHOR" > ex01/$(date +%F)-${AUTHOR}.json
     - name: Save 
-      run: |
-        git config --local user.email "action@github.com";
-        git config --local user.name "GitHub Action";
-        git add ex01/*.json; 
-        git commit; 
+      run: |-
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add ex01/*.json
+        git commit
         git push
