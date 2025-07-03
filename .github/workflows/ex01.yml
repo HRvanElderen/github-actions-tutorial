@@ -1,0 +1,16 @@
+name: ex01
+
+on:
+  workflow_dispatch:
+
+env:
+  AUTHOR: ${{ secrets.AUTHOR }}
+jobs:
+  author_info:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v4
+    - name: fetch author data
+      run: curl -s "openlibrary.org/search/authors.json?q=$AUTHOR" > ex01/$(date +%F)-${AUTHOR}.json
+    
