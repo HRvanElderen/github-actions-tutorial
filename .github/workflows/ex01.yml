@@ -18,5 +18,5 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add ex01/*.json
-        git commit
+        git commit -m "new action file"
         git push
